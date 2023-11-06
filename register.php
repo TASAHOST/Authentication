@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $user = new User($db);
+    $user = User::getInstance($db);
 
     if ($user->register($username, $password)) {
         echo "Registration successful. <a href='login.php'>Login here</a>";
